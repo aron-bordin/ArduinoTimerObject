@@ -65,6 +65,8 @@ void TimerObject::Update(){
 bool TimerObject::Tick(){
 	if(!blEnabled)
 		return false;
+	if(LastTime > millis()*2)//millis restarted
+		LastTime = 0;
 	if ((int)(millis() - LastTime) >= msInterval) {
 		LastTime = millis();
 		if(isSingleShot())
