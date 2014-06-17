@@ -1,19 +1,28 @@
 #include "TimerObject.h"
 
-TimerObject *t = new TimerObject(1000);
+TimerObject *timer1 = new TimerObject(1000);
+TimerObject *timer2 = new TimerObject(500);
+
 
 void setup(){
 	Serial.begin(9600);
-	t->setOnTimer(&PrintHello);
-	t->Start();
+	timer1->setOnTimer(&PrintHello1);
+	timer1->Start();
+
+	timer2->setOnTimer(&PrintHello2);
+	timer2->Start();
 
 }
 
-void PrintHello(){
-	Serial.println("Hello timer!!");
+void PrintHello1(){
+	Serial.println("Hello timer 1 !!");
 }
 
+void PrintHello2(){
+	Serial.println("Hello timer 2!!");
+}
 void loop(){
-	t->Update();
+	timer1->Update();
+	timer2->Update();
 
 }
