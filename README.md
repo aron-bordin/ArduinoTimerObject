@@ -97,7 +97,7 @@ Resume the Timer. If not started, will start it. If paused, will resume it. For 
 **void Pause();**
 Pause the timer, so you can resume it.
 
-**void Stop(); **
+**void Stop();**
 Stop the timer.
 
 **void Update();**
