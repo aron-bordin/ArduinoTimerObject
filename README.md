@@ -70,8 +70,8 @@ Complete example. Here we created two timers, you can run it and test the result
 ## Documentation
 
 ### Constructors
-**TimerObject(int ms);
-TimerObject(int ms, CallBackType callback);
+**TimerObject(int ms);<br>
+TimerObject(int ms, CallBackType callback);<br>
 TimerObject(int ms, CallBackType callback, bool isSingle);**
 	
 ### Functions
