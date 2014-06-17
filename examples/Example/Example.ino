@@ -24,5 +24,4 @@ void PrintHello2(){
 void loop(){
 	timer1->Update();
 	timer2->Update();
-
 }
