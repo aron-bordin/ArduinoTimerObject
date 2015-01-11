@@ -1,18 +1,18 @@
 #include "TimerObject.h"
 
-TimerObject::TimerObject(int ms){
+TimerObject::TimerObject(unsigned long int ms){
 	Create(ms, NULL, false);
 }
 
-TimerObject::TimerObject(int ms, CallBackType callback){
+TimerObject::TimerObject(unsigned long int ms, CallBackType callback){
 	Create(ms, callback, false);
 }
 
-TimerObject::TimerObject(int ms, CallBackType callback, bool isSingle){
+TimerObject::TimerObject(unsigned long int ms, CallBackType callback, bool isSingle){
 	Create(ms, callback, isSingle);
 }
 
-void TimerObject::Create(int ms, CallBackType callback, bool isSingle){
+void TimerObject::Create(unsigned long int ms, CallBackType callback, bool isSingle){
 	setInterval(ms);
 	setEnabled(false);
 	setSingleShot(isSingle);
@@ -20,7 +20,7 @@ void TimerObject::Create(int ms, CallBackType callback, bool isSingle){
 	LastTime = 0;
 }
 
-void TimerObject::setInterval(int ms){
+void TimerObject::setInterval(unsigned long int ms){
 	msInterval = (ms > 0) ? ms : 0;
 }
 
@@ -67,7 +67,7 @@ bool TimerObject::Tick(){
 		return false;
 	if(LastTime > millis()*2)//millis restarted
 		LastTime = 0;
-	if ((int)(millis() - LastTime) >= msInterval) {
+	if ((unsigned long int)(millis() - LastTime) >= msInterval) {
 		LastTime = millis();
 		if(isSingleShot())
 			setEnabled(false);
@@ -77,10 +77,13 @@ bool TimerObject::Tick(){
 }
 
 
-int TimerObject::getInterval(){
+unsigned long int TimerObject::getInterval(){
 	return msInterval;
 }
 
+unsigned long int TimerObject::getCurrentTime(){
+	return (unsigned long int)(millis() - LastTime);
+}
 CallBackType TimerObject::getOnTimerCallback(){
 	return onRun;
 }

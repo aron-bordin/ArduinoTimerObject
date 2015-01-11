@@ -8,8 +8,8 @@ typedef void (*CallBackType)();
 
 class TimerObject{
 private:
-	void Create(int ms, CallBackType callback, bool isSingle);
-	int msInterval;
+	void Create(unsigned long int ms, CallBackType callback, bool isSingle);
+	unsigned long int msInterval;
 	bool blEnabled;
 	bool blSingleShot;
 	CallBackType onRun;
@@ -18,12 +18,12 @@ private:
 	unsigned long DiffTime;//used when I pause the Timer and need to resume
 
 public:
-	TimerObject(int ms);
-	TimerObject(int ms, CallBackType callback);
-	TimerObject(int ms, CallBackType callback, bool isSingle);
+	TimerObject(unsigned long int ms);
+	TimerObject(unsigned long int ms, CallBackType callback);
+	TimerObject(unsigned long int ms, CallBackType callback, bool isSingle);
 	~TimerObject();
 
-	void setInterval(int ms);
+	void setInterval(unsigned long int ms);
 	void setEnabled(bool Enabled);
 	void setSingleShot(bool isSingle);
 	void setOnTimer(CallBackType callback);
@@ -34,7 +34,8 @@ public:
 	void Update();
 
 
-	int getInterval();
+	unsigned long int getInterval();
+	unsigned long int getCurrentTime();
 	CallBackType getOnTimerCallback();
 
 	bool isEnabled();

@@ -1,6 +1,6 @@
 #include "TimerObject.h"
 
-TimerObject *timer1 = new TimerObject(1000);
+TimerObject *timer1 = new TimerObject(60000);
 TimerObject *timer2 = new TimerObject(500);
 
 
@@ -23,5 +23,4 @@ void PrintHello2(){
 }
 void loop(){
 	timer1->Update();
-	timer2->Update();
 }

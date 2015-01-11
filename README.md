@@ -70,13 +70,13 @@ Complete example. Here we created two timers, you can run it and test the result
 ## Documentation
 
 ### Constructors
-**TimerObject(int ms);<br>
-TimerObject(int ms, CallBackType callback);<br>
-TimerObject(int ms, CallBackType callback, bool isSingle);**
+**TimerObject(unsigned long int ms);<br>
+TimerObject(unsigned long int ms, CallBackType callback);<br>
+TimerObject(unsigned long int ms, CallBackType callback, bool isSingle);**
 	
 ### Functions
 
-**void setInterval(int ms);**
+**void setInterval(unsigned long int ms);**
 Set callback interval
 
 **void setEnabled(bool Enabled);**
@@ -104,8 +104,11 @@ Stop the timer.
 Must to be called in the loop(), will check the timer, and if necessary, will run the callback
 
 
-**int getInterval();**
+**unsigned long int getInterval();**
 Get the interval
+
+**unsigned long int getCurrentTime();**
+Get time passed since the last tick
 
 **CallBackType getOnTimerCallback();**
 Get the Timer Callback
