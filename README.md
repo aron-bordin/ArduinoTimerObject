@@ -2,7 +2,7 @@
 
 #IMPORTANT
 ### This library was moved to a new repository: https://github.com/aron-bordin/PNG-Arduino-Framework
-I'll update just the new repository. Check and star the .PNG Arduino Framework, there are more objects and Arduino components.
+I'll update just the new repository. Check and star the .PNG Arduino Framework, there are more objects and Arduino components. This new repository has a better documentation.
 
 The **Arduino Timer Object** allow us to easily create Timer callbacks. In a predetermined interval, your function will be called. Works as a "thread", where a secondary function will run when necessary. 
 
